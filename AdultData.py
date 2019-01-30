@@ -108,9 +108,9 @@ df = pd.DataFrame(X)
 from sklearn.cross_validation import train_test_split
 X_train , X_test , y_train , y_test = train_test_split(X , y , test_size = 0.3)
 
-#using the NB Classifier to predict data
-from sklearn.naive_bayes import GaussianNB
-classifier = GaussianNB()
+#predicting data using random forest algorithm
+from sklearn.ensemble import RandomForestClassifier
+classifier = RandomForestClassifier(n_estimators = 40 , criterion = 'entropy')
 classifier.fit(X_train , y_train)
 y_pred = classifier.predict(X_test)
 
